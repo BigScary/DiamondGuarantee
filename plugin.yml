@@ -1,0 +1,34 @@
+name: DiamondGuarantee
+main: me.ryanhamshire.DiamondGuarantee.DiamondGuarantee
+softdepend: [Multiverse-Core, My Worlds, MystCraft, Transporter, TheUnderground, RoyalCommands]
+loadbefore: [TheUnderground]
+version: 2.4
+commands:
+   dgreload:
+      description: Reloads the configuration settings..
+      usage: /DGReload
+      permission: diamondguarantee.reload
+   diamondscore:
+      description: Gets a player's current diamond score.
+      usage: /DiamondScore <player name>
+      permission: diamondguarantee.getscore
+   setdiamondscore:
+      description: Sets a player's current diamond score.
+      usage: /SetDiamondScore <player name> <new score>
+      permission: diamondguarantee.setscore
+permissions:
+    diamondguarantee.admin.*:
+        description: Grants all administrative privileges.
+        children:
+            diamondguarantee.reload: true
+            diamondguarantee.getscore: true
+            diamondguarantee.setscore: true
+    diamondguarantee.reload:
+        description: Grants permission to use /DGReload.
+        default: op
+    diamondguarantee.getscore:
+        description: Grants permission to use /DiamondScore.
+        default: op
+    diamondguarantee.setscore:
+        description: Grants permission to use /SetDiamondScore.
+        default: op
